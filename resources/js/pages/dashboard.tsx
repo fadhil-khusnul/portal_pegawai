@@ -38,19 +38,13 @@ const breadcrumbs: BreadcrumbItem[] = [
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export default function Dashboard({ dataPegawaiTiran, search, roles }: any) {
     console.log('dataPegawaiTiran', roles);
-
     const [data, setData] = useState(dataPegawaiTiran?.data || []);
-
     console.log(data);
-
-    const [filters, setFilters] = useState(null);
-    const [globalFilterValue, setGlobalFilterValue] = useState(search || '');
     const [openModal, setOpenModal] = useState(false);
     const [formData, setFormData] = useState({ id: null, name: '', email: '', no_telepon: '', jabatan: '', role_id: null });
     const [editMode, setEditMode] = useState(false);
     const [errors, setErrors] = useState({});
-    const [resetPasien, setResetPasien] = useState(null);
-    const [deletePasien, setDeletePasien] = useState(null);
+
     const toast = useRef(null);
     const [loadingButton, setLoadingButton] = useState(false);
 
